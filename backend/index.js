@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 
 const corsOptions = {
-    origin: 'http://localhost:5173', // Allowed origins
+    origin: 'https://job-hunt-now.vercel.app', // Allowed origins
     credentials: true, // Allow cookies to be sent
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 };
