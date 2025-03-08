@@ -5,6 +5,7 @@ const isAuthenticated = async (req, res, next) => {
 
     try {
         const token = req.cookies?.token;
+        console.log("cook", req.cookies);
         console.log("token",token);
 
 
