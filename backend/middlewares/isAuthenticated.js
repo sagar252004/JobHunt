@@ -13,7 +13,7 @@ const isAuthenticated = async (req, res, next) => {
         console.log("token",token);
 
 
-        if (!token) {
+        if (token) {
             return res.status(401).json({
                 message: 'User not authenticated',
                 success: false,
