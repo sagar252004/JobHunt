@@ -12,8 +12,7 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
-app.use(cookieParser());
+
 
 
 const corsOptions = {
@@ -23,6 +22,8 @@ const corsOptions = {
 };
 app.use(cors(corsOptions)); // Use CORS middleware
 
+// Middleware
+app.use(cookieParser());
 
 
 
