@@ -123,14 +123,10 @@ export const login = async(req, res) => {
         return res
             .status(200)
             .cookie("token", token, {
-                maxAge: 1 * 24 * 60 * 60 * 1000,
-               //  maxAge: 15 * 24 * 60 * 60 * 1000,  // 15 days in milliseconds
-            httpOnly: true,  // Cookie is inaccessible to JavaScript (helps prevent XSS attacks)
-            sameSite: "strict",  // Prevents CSRF attacks
-            secure: process.env.NODE_ENV !== 'development', 
-                //httpOnly: true,
-                //sameSite: 'None', 
-                //secure: process.env.NODE_ENV !== 'development',
+             maxAge: 24 * 60 * 60 * 1000, // 1 day
+            httpOnly: true,  // Prevents XSS attacks
+            sameSite: "None", // Required for cross-origin cookies
+            secure: true, // Must be true when using HTTPS (like on Render & Vercel)
             })
             .json({
                 message: `Welcome back ${user.fullname}`,
